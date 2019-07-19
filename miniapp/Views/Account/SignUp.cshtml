@@ -1,0 +1,47 @@
+﻿@model SignUpViewModel
+@{
+    ViewBag.Title = "Sign Up";
+}
+@section scripts{
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body bg-light">
+        <div id="theSignUpForm">
+            <form method="post">
+                <h2>Please register</h2>
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="FirstName">First Name:</label>
+                    <input type="text" asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName">Last Name:</label>
+                    <input type="text" asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email Address:</label>
+                    <input type="text" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password:</label>
+                    <input type="password" asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RepeatPassword">Repeat Password:</label>
+                    <input type="password" asp-for="RepeatPassword" class="form-control" />
+                    <span asp-validation-for="RepeatPassword" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success"><i class="fa fa-sign-in"></i> Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

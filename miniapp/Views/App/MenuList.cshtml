@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Menu>
+<h1>Menu List</h1>
+<p>
+    Count: @Model.Count()
+</p>
+
+@foreach (var menu in Model)
+{
+    <li>@menu.Title</li>
+}

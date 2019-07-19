@@ -1,0 +1,21 @@
+
+[
+  {
+    "Id": 0,
+    "Title": "Menu1",
+    "IsActive": true,
+    "IsEnabled": true
+  },
+  {
+    "Id": 0,
+    "Title": "Menu2",
+    "IsActive": true,
+    "IsEnabled": true
+  },
+  {
+    "Id": 0,
+    "Title": "Menu3",
+    "IsActive": true,
+    "IsEnabled": true
+  }
+]

@@ -1,0 +1,80 @@
+﻿@inject Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider schemeProvider
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login Page";
+}
+@section scripts{
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<style>
+    .btn-google {
+        color: white;
+        background-color: #ea4335;
+    }
+
+    .btn-twitter {
+        color: white;
+        background-color: #38A1F3;
+    }
+
+    .btn-facebook {
+        color: white;
+        background-color: #3b5998;
+    }
+</style>
+
+<div class="row">
+
+    <div class="col-6">
+        <div class="col-md-6 offset-md-6">
+            <div class="card card-body bg-light">
+                <div id="theLoginForm">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group">
+                            <label asp-for="UserName">User Name:</label>
+                            <input type="text" asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-warning"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password">Password:</label>
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-warning"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" asp-for="Remember" class="form-check-input" />
+                                <label asp-for="Remember" class="form-check-label">Remember Me?</label>
+                            </div>
+                            <span asp-validation-for="Remember" class="text-warning"></span>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success"><i class="fa fa-sign-in"></i> Submit</button>
+                            <div>@ViewBag.UserMessage</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="col-md-6 offset-md-0">
+            <div class="card card-body bg-light">
+                @foreach (var provider in await schemeProvider.GetRequestHandlerSchemesAsync())
+                {
+                    <a class="btn btn-lg btn-@provider.Name.ToLower() btn-block text-uppercase" asp-action="ExternalLogin" asp-controller="account"
+                       asp-route-provider="@provider.Name"
+                       asp-route-returnUrl="@Context.Request.Query["returnUrl"]">
+                        <i class="fa fa-@provider.Name.ToLower() mr-1">
+                        </i> Sign in with @provider.DisplayName
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+

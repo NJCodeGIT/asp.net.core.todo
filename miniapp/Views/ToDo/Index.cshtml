@@ -1,0 +1,117 @@
+﻿@model ToDoViewModel
+
+@section scripts{
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+@{
+    ViewBag.Title = "To-Do";
+}
+
+
+<style>
+    /* The container */
+    .container {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* Hide the browser's default checkbox */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 8px;
+        top: 1px;
+        width: 9px;
+        height: 20px;
+        border: solid white;
+        border-width: 0 3px 8px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="fa-2x"> Task</label>
+                <input type="text" asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-warning"></span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add Task</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@foreach (var task in Model.ToDoViewModelList)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="hidden" name="id" value="@task.Id" />
+            <div asp-validation-summary="ModelOnly"></div>
+            @*<div class="form-group">*@
+                <a class="container" asp-controller="todo" asp-action="StatusChange/@task.Id">
+                    @task.Title
+                    <input type="checkbox" checked="@task.Status">
+                    <span class="checkmark"></span>
+                </a>
+                <a class="btn btn-light" asp-controller="todo" asp-action="delete/@task.Id"><i class="fa fa-remove"></i></a>
+                <a class="btn btn-light" asp-controller="todo" asp-action="edit/@task.Id"><i class="fa fa-edit"></i></a>
+            @*</div>*@
+        </div>
+    </div>
+}
+
+
+

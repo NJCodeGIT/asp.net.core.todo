@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./wwwroot/clientapp/out-tsc",
+    "types": []
+  },
+  "include": [
+    "ClientApp/**/*.ts"
+  ],
+  "exclude": [
+    "ClientApp/test.ts",
+    "ClientApp/**/*.spec.ts"
+  ]
+}

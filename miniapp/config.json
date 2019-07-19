@@ -1,0 +1,23 @@
+{
+  "ConnectionStrings": {
+    "EntityContextConnectionString": "server=localhost; Database=miniappDB; Integrated Security=true; MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "FacebookAccountDetails": {
+    "AppId": "#FAppId#",
+    "AppSecret": "#FAppSecret#"
+  },
+  "TwitterAccountDetails": {
+    "AppId": "#TAppId#",
+    "AppSecret": "#TAppSecret#"
+  },
+  "GoogleAccountDetails": {
+    "AppId": "#GAppId#",
+    "AppSecret": "#GAppSecret#"
+  }
+}

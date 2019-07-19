@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Welcome @User.Identity.Name</h1>
+    <p class="lead">Here are your claims</p>
+    <ul>
+        @foreach (var claim in User.Claims)
+        {
+            <li>
+                <em>@claim.Type</em>: @claim.Value
+            </li>
+        }
+    </ul>
+}
+
+<div class="jumbotron-fluid ml-2 p-3">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris commodo quis imperdiet. Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet. Amet est placerat in egestas erat imperdiet sed euismod. Purus gravida quis blandit turpis cursus in hac. Quam adipiscing vitae proin sagittis nisl rhoncus. Rhoncus urna neque viverra justo nec ultrices dui sapien. Auctor eu augue ut lectus arcu bibendum at. Volutpat sed cras ornare arcu dui vivamus arcu felis. Est ante in nibh mauris cursus mattis. Tincidunt eget nullam non nisi est sit amet facilisis. Tortor dignissim convallis aenean et tortor at risus viverra. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet non. Mattis vulputate enim nulla aliquet porttitor lacus luctus. Tortor posuere ac ut consequat semper viverra. Cras semper auctor neque vitae tempus quam pellentesque nec nam. Volutpat odio facilisis mauris sit amet massa. Sit amet aliquam id diam maecenas ultricies mi. At varius vel pharetra vel turpis nunc eget. A scelerisque purus semper eget.
+    </p>
+    <p>
+        Ultrices dui sapien eget mi proin sed. Elementum curabitur vitae nunc sed velit dignissim. Tortor consequat id porta nibh venenatis cras sed. Sit amet est placerat in egestas erat imperdiet sed euismod. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Ipsum dolor sit amet consectetur adipiscing. Justo laoreet sit amet cursus sit amet dictum sit amet. Risus nullam eget felis eget nunc lobortis mattis aliquam. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Ut eu sem integer vitae justo eget. Aliquet risus feugiat in ante metus dictum at tempor commodo. Blandit turpis cursus in hac habitasse platea. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Ut consequat semper viverra nam libero justo. Id aliquet risus feugiat in ante metus dictum. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Facilisis mauris sit amet massa vitae. Posuere ac ut consequat semper viverra nam libero justo laoreet. Mattis vulputate enim nulla aliquet.
+    </p>
+    <p>
+        Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. A erat nam at lectus urna duis convallis convallis tellus. Eget felis eget nunc lobortis mattis aliquam. Mauris a diam maecenas sed enim ut. Sit amet facilisis magna etiam. Vulputate enim nulla aliquet porttitor lacus luctus accumsan. Eu augue ut lectus arcu bibendum at varius vel. Mi eget mauris pharetra et ultrices neque ornare. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. Donec enim diam vulputate ut pharetra sit. Blandit cursus risus at ultrices mi tempus imperdiet nulla. Amet porttitor eget dolor morbi non arcu risus quis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.
+    </p>
+    <p>
+        Dolor sit amet consectetur adipiscing elit ut aliquam. Varius vel pharetra vel turpis nunc. Ullamcorper eget nulla facilisi etiam dignissim. Commodo odio aenean sed adipiscing. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Tortor vitae purus faucibus ornare suspendisse sed nisi. Sagittis orci a scelerisque purus. Porta lorem mollis aliquam ut porttitor leo. Turpis massa sed elementum tempus egestas sed. Etiam sit amet nisl purus in mollis nunc sed. Id ornare arcu odio ut sem nulla pharetra diam. Nascetur ridiculus mus mauris vitae ultricies. In hac habitasse platea dictumst quisque sagittis purus sit amet. Posuere ac ut consequat semper viverra nam libero justo.
+    </p>
+    <p>
+        Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Turpis massa sed elementum tempus egestas sed sed. Dictumst quisque sagittis purus sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Dolor sit amet consectetur adipiscing elit ut aliquam purus. Suspendisse sed nisi lacus sed viverra tellus. Iaculis eu non diam phasellus. Condimentum id venenatis a condimentum vitae. Morbi tristique senectus et netus et malesuada fames. Sit amet cursus sit amet dictum sit amet justo. Dui vivamus arcu felis bibendum ut. Tortor aliquam nulla facilisi cras fermentum odio eu. Lectus quam id leo in vitae turpis. Convallis tellus id interdum velit laoreet id donec ultrices. Pellentesque pulvinar pellentesque habitant morbi.
+    </p>
+    <p>
+        Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Turpis massa sed elementum tempus egestas sed sed. Dictumst quisque sagittis purus sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Dolor sit amet consectetur adipiscing elit ut aliquam purus. Suspendisse sed nisi lacus sed viverra tellus. Iaculis eu non diam phasellus. Condimentum id venenatis a condimentum vitae. Morbi tristique senectus et netus et malesuada fames. Sit amet cursus sit amet dictum sit amet justo. Dui vivamus arcu felis bibendum ut. Tortor aliquam nulla facilisi cras fermentum odio eu. Lectus quam id leo in vitae turpis. Convallis tellus id interdum velit laoreet id donec ultrices. Pellentesque pulvinar pellentesque habitant morbi.
+    </p>
+</div>
+
+
