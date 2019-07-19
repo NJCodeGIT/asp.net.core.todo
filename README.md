@@ -4,9 +4,11 @@ This is a basic asp.net core boilerplate to-do application.
 ### Technologies
   - **Asp.net Core 2.1** -  is a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. 
   - **Entity Framework (EF) Core** - is a lightweight, extensible, open source and cross-platform version of the popular Entity Framework data access technology.
+  - **AutoMapper** - is an object-object mapper. Object-object mapping works by transforming an input object of one type into an output object of a different type.
   - **Angular** - is a platform for building mobile and desktop web applications.
   - **Bootstrap** - is an open source toolkit for developing with HTML, CSS, and JS.
-  - **AutoMapper** - is an object-object mapper. Object-object mapping works by transforming an input object of one type into an output object of a different type.
+  - **Font-Awesome** - is a font that's made up of symbols, icons, or pictograms (whatever you prefer to call them) that you can use in a webpage, just like a font.
+  
 
 ### Feature
   - Multi way authentication which includes **identity login** and **social logins like** **facebook, twitter and google**.
