@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs
+/miniapp.ViewModels/obj
+/miniapp.ViewModels/bin/Debug/netcoreapp2.1
+/miniapp.EntityFrameworkCore/bin/Debug/netcoreapp2.1
+/miniapp.EntityFrameworkCore/obj
+/miniapp/bin/Debug/netcoreapp2.1
+/miniapp/obj
+/miniapp/wwwroot/clientapp/out-tsc
+/miniapp/node_modules
